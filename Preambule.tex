@@ -1,0 +1,157 @@
+%% Copyright (C) 2014 Dorian Depriester
+%% http://blog.dorian-depriester.fr
+%%
+%% This file may be distributed and/or modified under the conditions
+%% of the LaTeX Project Public License, either version 1.3c of this
+%% license or (at your option) any later version. The latest version
+%% of this license is in:
+%%
+%%    http://www.latex-project.org/lppl.txt
+%%
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2006/05/20 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Dorian Depriester
+%% <contact [at] dorian [-] depriester [dot] fr>.
+%%
+%% This is Preambule.tex for French PhD Thesis.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Liste des packages         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Faux texte, juste pour la démo
+\usepackage{blindtext}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Réglage des fontes et typo    
+\usepackage[utf8]{inputenc}		% LaTeX, comprend les accents !
+\usepackage[T1]{fontenc}
+
+\usepackage[square,sort&compress,sectionbib]{natbib}		% Doit être chargé avant babel
+\usepackage{chapterbib}
+	\renewcommand{\bibsection}{\section{Références}}		% Met les références biblio dans un \section (au lieu de \section*)
+		
+\usepackage[frenchb]{babel}
+\usepackage{lmodern}
+\usepackage{ae,aecompl}										% Utilisation des fontes vectorielles modernes
+\usepackage[upright]{fourier}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allure générale du document
+\usepackage{fancyhdr}			% Entête et pieds de page
+	\pagestyle{fancy}			% Indique que le style de la page sera justement fancy
+	\lfoot[\thepage]{} %gauche du pied de page
+	\cfoot{} %milieu du pied de page
+	\rfoot[]{\thepage} %droite du pied de page
+	\fancyhead[RO, LE] {}	
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage[section]{placeins}	% Place un FloatBarrier à chaque nouvelle section
+\usepackage{epigraph}
+\usepackage[font={small}]{caption}
+\usepackage[francais,nohints]{minitoc}		% Mini table des matières, en français
+	\setcounter{minitocdepth}{2}	% Mini-toc détaillées (sections/sous-sections)
+\usepackage[notbib]{tocbibind}		% Ajoute les Tables	des Matières/Figures/Tableaux à la table des matières
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Maths                         
+\usepackage{amsmath}			% Permet de taper des formules mathématiques
+\usepackage{amssymb}			% Permet d'utiliser des symboles mathématiques
+\usepackage{amsfonts}			% Permet d'utiliser des polices mathématiques
+\usepackage{nicefrac}			% Fractions 'inline'
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Tableaux
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{threeparttable}
+\usepackage{etoolbox}
+	\appto\TPTnoteSettings{\footnotesize}
+\addto\captionsfrench{\def\tablename{{\textsc{Tableau}}}}	% Renome 'table' en 'tableau'
+
+            
+            
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Graphiques                    
+\usepackage{graphicx}			% Permet l'inclusion d'images
+\usepackage{subcaption}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{pgfplots}
+	\usepgfplotslibrary{groupplots}
+\usepackage{tikz}
+	\usetikzlibrary{backgrounds,automata}
+	\pgfplotsset{width=7cm,compat=1.3}
+	\tikzset{every picture/.style={execute at begin picture={
+   		\shorthandoff{:;!?};}
+	}}
+	\pgfplotsset{every linear axis/.append style={
+		/pgf/number format/.cd,
+		use comma,
+		1000 sep={\,},
+	}}
+\usepackage{eso-pic}
+\usepackage{import}
+	
+	
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Mise en forme du texte        
+\usepackage{xspace}
+\usepackage[load-configurations = abbreviations]{siunitx}
+	\DeclareSIUnit{\MPa}{\mega\pascal}
+	\DeclareSIUnit{\micron}{\micro\meter}
+	\DeclareSIUnit{\tr}{tr}
+	\DeclareSIPostPower\totheM{m}
+	\sisetup{
+	locale = FR,
+	  inter-unit-separator=$\cdot$,
+	  range-phrase=~\`{a}~,     	% Utilise le tiret court pour dire "de... à"
+	  range-units=single,  			% Cache l'unité sur la première borne
+	  }
+\usepackage{chemist}
+\usepackage[version=3]{mhchem}
+\usepackage{textcomp}
+\usepackage{array}
+\usepackage{hyphenat}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Navigation dans le document
+\usepackage[pdftex,pdfborder={0 0 0},
+			colorlinks=true,
+			linkcolor=blue,
+			citecolor=red,
+			pagebackref=true,
+			]{hyperref}	% Créera automatiquement les liens internes au PDF
+						% Doit être chargé en dernier (Sauf exceptions)
+			
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Packages qui doivent être chargés APRES hyperref	             
+\usepackage[top=2.5cm, bottom=2cm, left=3cm, right=2.5cm,
+			headheight=15pt]{geometry}
+\usepackage[acronym,xindy,toc,numberedsection]{glossaries}
+	\newglossary[nlg]{notation}{not}{ntn}{Notation} 	% Création d'un type de glossaire 'notation'
+	\makeglossaries
+	\loadglsentries{Glossaire}							% Utilisation d'un fichier externe pour la définition des entrées (Glossaire.tex)				

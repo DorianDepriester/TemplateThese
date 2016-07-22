@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Commandes perso            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\alp}{\texorpdfstring{\ensuremath{\upalpha}\xspace}{alpha }}
+\newcommand{\bet}{\texorpdfstring{\ensuremath{\upbeta}\xspace}{b\'{e}ta }}
+\newcommand{\alpbet}{\texorpdfstring{\ensuremath{\upalpha-\upbeta}\xspace}{alpha-b\'{e}ta}}
+\newcommand{\alpt}{\ensuremath{\alpha_2}\xspace}
+\newcommand{\strt}{\gls{strt}\xspace}
+
+
+% Tenseur des déformation cylindrique
+\newcommand{\epsrr}{\ensuremath{\varepsilon_{rr}}\xspace}
+\newcommand{\epstt}{\ensuremath{\varepsilon_{\theta\theta}}\xspace}
+\newcommand{\epszz}{\ensuremath{\varepsilon_{zz}}\xspace}
+\newcommand{\epsrt}{\ensuremath{\varepsilon_{r\theta}}\xspace}
+\newcommand{\epstz}{\ensuremath{\varepsilon_{\theta z}}\xspace}
+\newcommand{\epszr}{\ensuremath{\varepsilon_{zr}}\xspace}
+
+\newcommand{\matlab}{\textsc{Matlab}\texttrademark\xspace}
+
+
+
+%% Figures centrées, et en position 'here, top, bottom or page'
+\newenvironment{figureth}{%
+		\begin{figure}[htbp]
+			\centering
+	}{
+		\end{figure}
+		}
+		
+		
+%% Tableaux centrés, et en position 'here, top, bottom or page'
+\newenvironment{tableth}{%
+		\begin{table}[htbp]
+			\centering
+			%\rowcolors{1}{coleurtableau}{coleurtableau}
+	}{
+		\end{table}
+		}
+
+%% Sous-figures centrées, en position 'top'		
+\newenvironment{subfigureth}[1]{%
+	\begin{subfigure}[t]{#1}
+	\centering
+}{
+	\end{subfigure}
+}
+
+\newcommand{\citationChap}[2]{%
+	\epigraph{\og \textit{#1} \fg{}}{#2}
+}
+
+%% On commence par une page impaire quand on change le style de numérotation de pages 
+\let\oldpagenumbering\pagenumbering
+\renewcommand{\pagenumbering}[1]{%
+	\cleardoublepage
+	\oldpagenumbering{#1}
+}

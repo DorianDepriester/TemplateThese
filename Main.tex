@@ -1,0 +1,97 @@
+%% Copyright (C) 2014 Dorian Depriester
+%% http://blog.dorian-depriester.fr
+%%
+%% This file may be distributed and/or modified under the conditions
+%% of the LaTeX Project Public License, either version 1.3c of this
+%% license or (at your option) any later version. The latest version
+%% of this license is in:
+%%
+%%    http://www.latex-project.org/lppl.txt
+%%
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2006/05/20 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is Dorian Depriester
+%% <contact [at] dorian [-] depriester [dot] fr>.
+%%
+%% This is main.tex for French PhD Thesis.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Fichier maitre				%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt, twoside,openright]{report}
+\input{Preambule}		% Liste des packages et de leurs options
+\input{CommandesPerso}	% Commandes et environnements perso
+\input{PageDeGarde}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   			Liste des fichiers à compiler					%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\includeonly{Chapitre1,Chapitre2,Annexes}
+
+
+
+% Infos de la page de garde
+\author{Dorian \scshape{Depriester}}
+\title{Caractérisation et modélisation du procédé de fluotournage inverse à froid du TA6V}
+\specialite{Science et Génie des Matériaux}
+\directeur{Elisabeth \scshape{Massoni}}
+\encadrant{Michel \scshape{Bellet}}
+\date{18 décembre 2014}
+\jurya{Mme Ponte Casta\~neda}{Professeur}{Examinateur}
+\juryb{M. Betty Boop}{Professeur}{Rapporteur}
+\juryc{Mme Ponte Casta\~neda}{Professeur}{Examinateur}
+\juryd{Mme Ponte Casta\~neda}{Professeur}{Examinateur}
+\ecole{l'\'{E}cole Nationale Supérieure des Mines de Paris}
+
+% Méta-données du PDF
+\hypersetup{
+    pdfauthor={Dorian Depriester},
+    pdfsubject={Manuscrit de thèse de doctorat},
+    pdftitle={Fluotournage à froid de tubes en TA6V},
+    pdfkeywords={Fluotournage, déformation plastique, titane, TA6V}
+}
+
+
+
+\begin{document}
+% Préambule
+	\pagenumbering{roman}
+	\pagedegarde
+	\dominitoc						% Génération des mini-toc
+	\cleardoublepage
+		% Table des matières
+			\setcounter{tocdepth}{1}	% Pas besoin de trop détailler le sommaire ici (chapitres/sections)
+			\tableofcontents
+		% Liste des figures
+			\renewcommand*\listfigurename{Liste des figures}
+			\listoffigures
+		% Liste des tableaux
+		\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+% 		Contenu du document			%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\pagenumbering{arabic}
+	\includefrom{Chapitre1/}{Chapitre1}	
+	\includefrom{Chapitre2/}{Chapitre2} 		
+	
+	
+	% Annexes
+	\begin{appendix}
+		\pagenumbering{Roman}
+			\includefrom{Annexes/}{Annexes}				% Figures en annexe
+			
+		% Liste des acronymes, glossaire et liste des symboles (dans l'ordre)		
+		\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
+		\printglossary[title=Glossaire,toctitle=Glossaire]
+		\printglossary[type=notation,title={Liste des symboles}, toctitle={Liste des symboles}]
+	
+	\end{appendix}
+
+\end{document}
