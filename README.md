@@ -1,5 +1,5 @@
-# TemplateThese
-Structure minimale pour rédiger un manuscrit de thèse de doctorat aux normes typographiques françaises
+# Template de These
+Structure minimale pour rédiger un manuscrit de thèse de doctorat aux normes typographiques françaises.
 
 ## Compilation
 ### (pdf)latex
