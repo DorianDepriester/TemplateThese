@@ -1,6 +1,28 @@
 # Template de These
 Structure minimale pour rédiger un manuscrit de thèse de doctorat aux normes typographiques françaises.
 
+## Structure du document
+Le document comprend les parties suivantes :
+
+* Table des matières
+* Liste des figures
+* Liste des tableaux
+
+1. Chapitre 1
+  * Citation de début de chapitre
+  * Table des matières détaillée du chapitre
+  * Corps du chapitre
+  * Références biblio du chapitre
+2. Chapitre 2
+  * Idem
+3. Etc.
+
+* Annexes :
+  * documents annexes
+  * liste des acronymes
+  * liste des symboles
+  * glossaire
+
 ## Compilation
 ### (pdf)latex
 Le fichier ``Main.tex`` est le fichier maitre, c'est donc lui qu'il faut compiler avec (pdf)latex. 
