@@ -63,10 +63,11 @@
 % Préambule
 	\pagenumbering{roman}
 	\pagedegarde
-	\dominitoc						% Génération des mini-toc
+
 	\cleardoublepage
 		% Table des matières
 			\setcounter{tocdepth}{1}	% Pas besoin de trop détailler le sommaire ici (chapitres/sections)
+			\dominitoc						% Génération des mini-toc	\pagenumbering{arabic}
 			\tableofcontents
 		% Liste des figures
 			\renewcommand*\listfigurename{Liste des figures}
@@ -77,6 +78,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
 % 		Contenu du document			%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\setcounter{mtc}{3}
 	\pagenumbering{arabic}
 	\includefrom{Chapitre1/}{Chapitre1}	
 	\includefrom{Chapitre2/}{Chapitre2} 		
