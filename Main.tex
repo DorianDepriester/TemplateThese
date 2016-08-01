@@ -76,9 +76,9 @@
 		\listoftables
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
-% 		Contenu du document			%
+%        Contenu du document        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\setcounter{mtc}{3}
+	\setcounter{mtc}{3}	% "Corrige" les minitocs décallés à cause des chapter* (ex : table des matières)
 	\pagenumbering{arabic}
 	\includefrom{Chapitre1/}{Chapitre1}	
 	\includefrom{Chapitre2/}{Chapitre2} 		
@@ -87,7 +87,7 @@
 	% Annexes
 	\begin{appendix}
 		\pagenumbering{Roman}
-			\includefrom{Annexes/}{Annexes}				% Figures en annexe
+		\includefrom{Annexes/}{Annexes}				% Figures en annexe
 			
 		% Liste des acronymes, glossaire et liste des symboles (dans l'ordre)		
 		\printglossary[type=\acronymtype , title={Liste des acronymes}, toctitle={Liste des acronymes}]
