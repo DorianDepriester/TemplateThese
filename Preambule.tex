@@ -47,12 +47,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Allure générale du document
-\usepackage{fancyhdr}			% Entête et pieds de page
-	\pagestyle{fancy}			% Indique que le style de la page sera justement fancy
-	\lfoot[\thepage]{} %gauche du pied de page
-	\cfoot{} %milieu du pied de page
-	\rfoot[]{\thepage} %droite du pied de page
-	\fancyhead[RO, LE] {}	
 \usepackage{enumerate}
 \usepackage{enumitem}
 \usepackage[section]{placeins}	% Place un FloatBarrier à chaque nouvelle section
@@ -63,7 +57,6 @@
 \usepackage[notbib]{tocbibind}		% Ajoute les Tables	des Matières/Figures/Tableaux à la table des matières
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 %% Maths                         
 \usepackage{amsmath}			% Permet de taper des formules mathématiques
 \usepackage{amssymb}			% Permet d'utiliser des symboles mathématiques
@@ -72,8 +65,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 %% Tableaux
 \usepackage{multirow}
 \usepackage{booktabs}
@@ -85,11 +76,8 @@
 	\appto\TPTnoteSettings{\footnotesize}
 \addto\captionsfrench{\def\tablename{{\textsc{Tableau}}}}	% Renome 'table' en 'tableau'
 
-            
-            
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Graphiques                    
+%% Eléments graphiques                    
 \usepackage{graphicx}			% Permet l'inclusion d'images
 \usepackage{subcaption}
 \usepackage{pdfpages}
@@ -109,10 +97,6 @@
 	}}
 \usepackage{eso-pic}
 \usepackage{import}
-	
-	
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Mise en forme du texte        
@@ -126,15 +110,13 @@
 	locale = FR,
 	  inter-unit-separator=$\cdot$,
 	  range-phrase=~\`{a}~,     	% Utilise le tiret court pour dire "de... à"
-	  range-units=single,  			% Cache l'unité sur la première borne
+	  range-units=single,  		% Cache l'unité sur la première borne
 	  }
-\usepackage{chemist}
-\usepackage[version=3]{mhchem}
+
+\usepackage[version=3]{mhchem}	% Equations chimiques
 \usepackage{textcomp}
 \usepackage{array}
 \usepackage{hyphenat}
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Navigation dans le document
@@ -144,14 +126,22 @@
 			citecolor=red,
 			pagebackref=true,
 			]{hyperref}	% Créera automatiquement les liens internes au PDF
-						% Doit être chargé en dernier (Sauf exceptions)
+					% Doit être chargé en dernier (Sauf exceptions ci-dessous)
 			
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Packages qui doivent être chargés APRES hyperref	             
 \usepackage[top=2.5cm, bottom=2cm, left=3cm, right=2.5cm,
 			headheight=15pt]{geometry}
-\usepackage[acronym,xindy,toc,numberedsection]{glossaries}
-	\newglossary[nlg]{notation}{not}{ntn}{Notation} 	% Création d'un type de glossaire 'notation'
+
+\usepackage{fancyhdr}			% Entête et pieds de page. Doit être placé APRES geometry
+	\pagestyle{fancy}		% Indique que le style de la page sera justement fancy
+	\lfoot[\thepage]{} 		% gauche du pied de page
+	\cfoot{} 			% milieu du pied de page
+	\rfoot[]{\thepage} 		% droite du pied de page
+	\fancyhead[RO, LE] {}	
+	
+\usepackage[acronym,xindy,toc,numberedsection,ucmark]{glossaries}
+	\newglossary[nlg]{notation}{not}{ntn}{Notation} % Création d'un type de glossaire 'notation'
 	\makeglossaries
-	\loadglsentries{Glossaire}							% Utilisation d'un fichier externe pour la définition des entrées (Glossaire.tex)				
+	\loadglsentries{Glossaire}			% Utilisation d'un fichier externe pour la définition des entrées (Glossaire.tex)				
