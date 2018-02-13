@@ -43,6 +43,12 @@ makeglossaries Main
 pdflatex Main
 pdflatex Main
 ````
+Une alternative à la la compilation manuelle (même automatisée avec un script bash), est d'utiliser latexmk qui va complémenter automariser *tout* le processus.
+
+````
+latexmk -pdf -pvc Main.tex
+````
+Les options servent respectivement à avoir un fichier pdf et afficher le document généré. Plus d'information sur latexmk sont disponiles [ici](https://man.cx/latexmk) et [là](http://mg.readthedocs.io/latexmk.html).
 
 ## Rédaction chapitre par chapitre
 Dans le fichier ``Main.tex``, il faut penser à modifier la ligne suivante pour définir la liste des chapitres à compiler :
