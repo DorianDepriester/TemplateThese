@@ -43,7 +43,7 @@ makeglossaries Main
 pdflatex Main
 pdflatex Main
 ````
-Une alternative à la la compilation manuelle (même automatisée avec un script bash), est d'utiliser latexmk qui va complémenter automariser *tout* le processus.
+Une alternative à la la compilation manuelle (même automatisée avec un script bash), est d'utiliser latexmk qui va complétement automatiser *tout* le processus.
 
 ````
 latexmk -pdf -pvc Main.tex
