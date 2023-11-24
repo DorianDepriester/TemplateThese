@@ -37,13 +37,13 @@ Pour utiliser le package ``glossaries``, il faut utiliser le compilateur éponym
 La compilation de tout le document ressemble à ça:
 ```bash
 pdflatex Main
-bibtex Chapitre1
-bibtex Chapitre2
+bibtex Chapitre1/Chapitre1.aux
+bibtex Chapitre2/Chapitre2.aux
 makeglossaries Main
 pdflatex Main
 pdflatex Main
 ````
-Une alternative à la la compilation manuelle (même automatisée avec un script bash), est d'utiliser latexmk qui va complétement automatiser *tout* le processus.
+Une alternative à la la compilation manuelle (même automatisée avec le script bash `compile.sh`), est d'utiliser latexmk qui va complétement automatiser *tout* le processus.
 
 ````
 latexmk -pdf -pvc Main.tex
